@@ -1,6 +1,4 @@
 # Instruksi PPWL12-FE-Clone
-> Liat [video tutorial]() ini sebagai referensi cara mengerjakan proyek.
-
 Brief:
 1. Tiap anggota meng-cloning UI/UX 1 halaman sub page dari website utama yang diberikan ke tim. Cth: Team Web `https://www.kokbisa.id/`. Dari web utama tiap anggota handle halaman khusus: anggota 1 (Home - https://www.kokbisa.id/), anggota 2 (langganan - https://www.kokbisa.id/langganan), dst.
 2. Menggunakan template repo ini sebagai base, dengan Stack React-TS+TailwindCSS. Target proyek ini untuk melatih mahasiswa dalam mendesain UI menggunakan TailwindCSS & memanfaatkan state di React (untuk interaksi seperti transition carousel, popup, dsb). 
@@ -83,12 +81,12 @@ Lihat file `.github\workflow\deploy.yml`. Pada dasarnya file ini adalah konfigur
     - ✅ Require a pull request before merging
     - ✅ Require approvals (set 1 atau lebih)
     - ✅ Restrict who can push to matching branches
-    - Tambahkan hanya username kamu (owner)
+    - Tambahkan hanya username anda (owner)
 
 Efeknya:
 - ❌ collaborator tidak bisa push langsung ke main
 - ❌ tidak bisa merge tanpa approval
-- ✅ hanya kamu yang bisa approve / push
+- ✅ hanya anda yang bisa approve / push
 
 Untuk branch `dev` Tidak perlu rule → semua collaborator bebas push. Jadi kolaborator hanya bisa push ke `dev`. Jika ingin perubahan ke `main`, lakukan **Pull Request**.
 
@@ -103,15 +101,18 @@ git clone https://github.com/repoPerwakilan/ppwl12-fe-clone && cd ppwl12-fe-clon
 bun install
 bun dev
 ## Tampilan sudah diberi navbar untuk berpindah halaman. Ini agar asdos dapat navigasi halaman dan mudah dalam penilaian. 
-## Sudah disediakan template Page1.tsx - Page6.tsx, isi sesuai hasil clone kalian. 
+## Sudah disediakan template Page1.tsx - Page6.tsx, isi sesuai hasil clone anda. 
 ```
-Kali ini kita akan belajar menggunakan AI dalam web development, terutama untuk generate template dasar.
-- Masuk ke https://www.insidersedge.io/ (berisi informasi berbagai web tool AI yang dapat kamu coba)
+Lihat di Navigasi web pada `PageExample` ([referensi](https://universe.leagueoflegends.com/en_US/)), itu  salah satu contoh halaman. Anda dapat menghapus nya dan contoh dependensinya di `components/`, `lib/`, dan kode di `index.css` 
+
+Kita akan menggunakan AI dalam web development, terutama untuk generate template dasar.
+- Masuk ke https://www.insidersedge.io/ (berisi informasi berbagai web tool AI yang dapat anda coba)
 - Cari "same" (tool AI untuk clone website).
 - Clone url dari url website yang ditugaskan yang sudah di pilih (hanya perlu buat 1 halaman static dengan berbagai UI State (Hover, Scroll, dsb.)).
-	- ketika kamu generate, akan ada opsi generate, pilih "generate semua".
+	- ketika anda generate, akan ada opsi generate, pilih "generate semua".
 	- Kode akan dibangun pakai next.js, jadi anda perlu ganti elemen next.js jadi pakai React biasa.
-	- Kamu perlu salin kode manual 1 per satu ke local (karena "download sekaligus" masih dalam fitur pro).
+	- Anda perlu salin kode manual 1 per satu ke local (karena "download sekaligus" masih dalam fitur pro).
+> Liat [video tips cloing web](https://drive.google.com/file/d/1JvDKl4VHxZyi6fhzRmm8t0tpGQC1uDAf/view?usp=drive_link) ini sebagai referensi dalam cloning website nya.
 
 ## 4. Final
 
@@ -124,5 +125,5 @@ Kali ini kita akan belajar menggunakan AI dalam web development, terutama untuk 
     - Rapikan repo, hapus file atau kode yang tidak digunakan.
 - Nilai Personel: 
     - Kemiripan UI dengan referensi Asli. 
-    - Struktur UI yang lebih kompleks dibanding anggota lain.
+    - Struktur UI yang lebih kompleks dibanding anggota lain. Penggunaan custom CSS.
     - Terdapat State khusus yang lebih kompleks dibanding anggota lain.
