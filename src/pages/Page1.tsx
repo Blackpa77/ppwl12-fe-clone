@@ -12,8 +12,24 @@ import {
 
 export default function Page1() {
   return (
-    <div className="h-[calc(100vh-4rem)] flex justify-center items-center">
-      <h1>Page 1</h1>
+    <div className="flex h-screen bg-black overflow-hidden pt-[64px]">
+      <div className="hidden md:block"> 
+        <Sidebar
+        isCollapsed={isCollapsed}
+        onToggleCollapse={() => setIsCollapsed(!isCollapsed)}
+        onCreatePlaylist={() => console.log("Create playlist")}
+      /></div>
+
+      <main className="flex-1 overflow-y-auto bg-[#121212]">
+        <div className="px-6 py-6 pr-8">
+          <SectionRow title="Trending songs" items={trendingSongs} />
+          <SectionRow title="Popular artists" items={popularArtists} isArtist />
+          <SectionRow title="Popular albums and singles" items={popularAlbums} />
+          <SectionRow title="Popular radio" items={popularRadio} isRadio />
+          <SectionRow title="Featured Charts" items={featuredCharts} isChart />
+        </div>
+        <SpotifyFooter />
+      </main>
     </div>
   )
 }
