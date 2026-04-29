@@ -11,34 +11,30 @@ interface FooterColumn {
 
 const footerColumns: FooterColumn[] = [
   {
-    title: "Perusahaan",
+    title: "Company",
+    links: [{ label: "About" }, { label: "Jobs" }, { label: "For the Record" }],
+  },
+  {
+    title: "Communities",
     links: [
-      { label: "Tentang" },
-      { label: "Pekerjaan" },
-      { label: "For the Record" },
+      { label: "For Artists" },
+      { label: "Developers" },
+      { label: "Advertising" },
+      { label: "Investors" },
+      { label: "Vendors" },
     ],
   },
   {
-    title: "Komunitas",
+    title: "Useful links",
     links: [
-      { label: "Untuk Artis" },
-      { label: "Pengembang" },
-      { label: "Iklan" },
-      { label: "Investor" },
-      { label: "Vendor" },
+      { label: "Support" },
+      { label: "Free Mobile App" },
+      { label: "Popular by Country" },
+      { label: "Import your music" },
     ],
   },
   {
-    title: "Tautan berguna",
-    links: [
-      { label: "Dukungan" },
-      { label: "Aplikasi Seluler Gratis" },
-      { label: "Populer berdasarkan Negara" },
-      { label: "Impor musikmu" },
-    ],
-  },
-  {
-    title: "Paket Spotify",
+    title: "Spotify Plans",
     links: [
       { label: "Premium Lite" },
       { label: "Premium Standard" },
