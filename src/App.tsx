@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Sidebar } from "./components/Sidebar";
-// import SpotifyFooter from "./components/SpotifyFooter"; // jika ada
+import SpotifyFooter from "./components/SpotifyFooter";
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
@@ -57,8 +57,7 @@ export default function App() {
             <h1 className="text-2xl font-bold mb-4">Mulai Dengarkan Sekarang</h1>
             <p>Area ini bisa di-scroll. Taruh komponen kartu musik atau banner di sini.</p>
           </div>
-          {/* SpotifyFooter jika ada */}
-          {/* <SpotifyFooter /> */}
+          {SpotifyFooter && <SpotifyFooter />}
         </main>
       </div>
     </div>
