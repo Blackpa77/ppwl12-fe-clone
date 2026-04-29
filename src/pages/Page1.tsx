@@ -11,8 +11,6 @@ import {
 } from "../lib/spotify-data";
 
 export default function Page1() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
   return (
     <div className="flex h-screen bg-black overflow-hidden pt-[64px]">
       <div className="hidden md:block"> 
@@ -33,5 +31,5 @@ export default function Page1() {
         <SpotifyFooter />
       </main>
     </div>
-  );
+  )
 }
