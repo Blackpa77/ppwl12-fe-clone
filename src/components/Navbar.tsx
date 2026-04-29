@@ -7,7 +7,6 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Page1', path: '/' },
     { name: 'Page2', path: '/page-2' },
-    { name: 'PageExample', path: '/page-example' },
   ];
 
   // Fungsi pembantu untuk menutup menu mobile
