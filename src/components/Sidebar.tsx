@@ -19,7 +19,7 @@ interface SidebarProps {
 export function Sidebar({ onCreatePlaylist }: SidebarProps) {
   const [width, setWidth] = useState(320);
   const [isDragging, setIsDragging] = useState(false);
-  const isWide = width >= 340;
+  const isWide = width >= 340; // tombol create muncul di atas 340px
 
   const handleMouseDown = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -95,7 +95,7 @@ export function Sidebar({ onCreatePlaylist }: SidebarProps) {
                 </button>
               </div>
 
-              {/* Footer */}
+              {/* Footer STATIS (tidak berubah saat lebar berubah) */}
               <div className="flex flex-col px-2 text-[11px] mb-6">
                 <div className="flex flex-wrap gap-x-3 mb-1">
                   <span className="cursor-pointer text-[#b3b3b3] hover:no-underline">Legal</span>
