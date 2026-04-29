@@ -94,7 +94,6 @@ export default function SectionRow({
                 }
                 image={item.cover || item.image || ""}
                 isRound={isArtist}
-                explicit={item.explicit}
                 gradient={item.gradient}
                 label={item.label}
                 isChart={isChart}
