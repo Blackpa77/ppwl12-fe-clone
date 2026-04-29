@@ -7,13 +7,12 @@ export interface MusicItem {
   cover?: string;
   image?: string;
   type?: string;
-  explicit?: boolean;
   gradient?: string;
   label?: string;
 }
 
 export const trendingSongs: MusicItem[] = [
-  { id: "1", title: "Kicau Mania", artist: "Bangsay", cover: "https://picsum.photos/seed/km1/300/300", explicit: true },
+  { id: "1", title: "Kicau Mania", artist: "Bangsay", cover: "https://picsum.photos/seed/km1/300/300" },
   { id: "2", title: "Black Hole", artist: "DJ Teloor", cover: "https://picsum.photos/seed/bh2/300/300" },
   { id: "3", title: "Berapa Kali Kita Akan Saling...", artist: "Pamungkas", cover: "https://picsum.photos/seed/bk3/300/300" },
   { id: "4", title: "Kicau Mania", artist: "Ndarboy Genk, Banditoz", cover: "https://picsum.photos/seed/km4/300/300" },
@@ -22,7 +21,7 @@ export const trendingSongs: MusicItem[] = [
   { id: "7", title: "Terpukau", artist: "Astrid", cover: "https://picsum.photos/seed/tp7/300/300" },
   { id: "8", title: "Nafas", artist: "Dipha Barus, Hindia", cover: "https://picsum.photos/seed/nf8/300/300" },
   { id: "9", title: "Ini Abadi", artist: "Perunggu", cover: "https://picsum.photos/seed/ia9/300/300" },
-  { id: "10", title: "Body Pata Pata", artist: "Maman Fandi", cover: "https://picsum.photos/seed/bp10/300/300", explicit: true },
+  { id: "10", title: "Body Pata Pata", artist: "Maman Fandi", cover: "https://picsum.photos/seed/bp10/300/300"},
 ];
 
 export const popularArtists: MusicItem[] = [
@@ -63,10 +62,10 @@ export const popularRadio: MusicItem[] = [
 ];
 
 export const featuredCharts: MusicItem[] = [
-  { id: "1", title: "Top Songs Global", description: "Your weekly update of the most played tracks right now", cover: "https://picsum.photos/seed/c1/300/300", gradient: "from-blue-800 to-blue-950" },
-  { id: "2", title: "Top Songs Indonesia", description: "Your weekly update of the most played tracks right now", cover: "https://picsum.photos/seed/c2/300/300", gradient: "from-green-800 to-green-950" },
-  { id: "3", title: "Top 50 Global", description: "Your daily update of the most played tracks right now", cover: "https://picsum.photos/seed/c3/300/300", gradient: "from-sky-700 to-sky-950" },
-  { id: "4", title: "Top 50 Indonesia", description: "Your daily update of the most played tracks right now", cover: "https://picsum.photos/seed/c4/300/300", gradient: "from-red-800 to-red-950" },
-  { id: "5", title: "Viral 50 Global", description: "Your daily update of the most played tracks right now", cover: "https://picsum.photos/seed/c5/300/300", gradient: "from-emerald-700 to-emerald-950" },
-  { id: "6", title: "Viral 50 Indonesia", description: "Your daily update of the most played tracks right now", cover: "https://picsum.photos/seed/c6/300/300", gradient: "from-red-700 to-red-950" },
+  { id: "1", title: "Top Songs Global", description: "Your weekly update of the most played tracks right now", cover: "/src/assets/region_global_default.webp", gradient: "from-blue-800 to-blue-950" },
+  { id: "2", title: "Top Songs Indonesia", description: "Your weekly update of the most played tracks right now", cover: "/src/assets/region_id_default.webp", gradient: "from-green-800 to-green-950" },
+  { id: "3", title: "Top 50 Global", description: "Your daily update of the most played tracks right now", cover: "/src/assets/region_global_default2.webp", gradient: "from-sky-700 to-sky-950" },
+  { id: "4", title: "Top 50 Indonesia", description: "Your daily update of the most played tracks right now", cover: "/src/assets/region_id_default2.webp", gradient: "from-red-800 to-red-950" },
+  { id: "5", title: "Viral 50 Global", description: "Your daily update of the most played tracks right now", cover: "/src/assets/region_global_default3.webp", gradient: "from-emerald-700 to-emerald-950" },
+  { id: "6", title: "Viral 50 Indonesia", description: "Your daily update of the most played tracks right now", cover: "/src/assets/region_id_default3.webp", gradient: "from-red-700 to-red-950" },
 ];

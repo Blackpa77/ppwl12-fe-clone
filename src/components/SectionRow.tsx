@@ -76,7 +76,7 @@ export default function SectionRow({
         {/* Scrollable row */}
         <div
           ref={scrollRef}
-          className="flex gap-4 overflow-x-auto scrollbar-hide"
+          className="flex gap-2 overflow-x-auto scrollbar-hide"
           style={{ scrollSnapType: "x mandatory" }}
         >
           {items.map((item) => (
