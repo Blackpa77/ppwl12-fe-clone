@@ -72,8 +72,8 @@ export function Sidebar({ onCreatePlaylist }: SidebarProps) {
               )}
             </div>
 
-            {/* Scroll area tanpa custom CSS */}
-            <div className="flex-1 overflow-y-auto px-2 pb-2">
+            {/* Scroll area */}
+            <div className="flex-1 overflow-y-auto px-1 pb-10 sidebar-scroll">
               {/* Create Playlist Card */}
               <div className="bg-[#242424] rounded-lg p-4 mb-4">
                 <h3 className="font-bold text-white mb-1">Create your first playlist</h3>
