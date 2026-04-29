@@ -2,7 +2,6 @@ import React from "react";
 
 interface FooterLink {
   label: string;
-  href: string;
 }
 
 interface FooterColumn {
@@ -14,44 +13,38 @@ const footerColumns: FooterColumn[] = [
   {
     title: "Perusahaan",
     links: [
-      { label: "Tentang", href: "https://www.spotify.com/about/" },
-      { label: "Pekerjaan", href: "https://www.spotify.com/jobs/" },
-      { label: "For the Record", href: "https://newsroom.spotify.com/" },
+      { label: "Tentang" },
+      { label: "Pekerjaan" },
+      { label: "For the Record" },
     ],
   },
   {
     title: "Komunitas",
     links: [
-      { label: "Untuk Artis", href: "https://artists.spotify.com/" },
-      { label: "Pengembang", href: "https://developer.spotify.com/" },
-      { label: "Iklan", href: "https://ads.spotify.com/" },
-      { label: "Investor", href: "https://investors.spotify.com/" },
-      { label: "Vendor", href: "https://spotifyforvendors.com/" },
+      { label: "Untuk Artis" },
+      { label: "Pengembang" },
+      { label: "Iklan" },
+      { label: "Investor" },
+      { label: "Vendor" },
     ],
   },
   {
     title: "Tautan berguna",
     links: [
-      { label: "Dukungan", href: "https://support.spotify.com/" },
-      {
-        label: "Aplikasi Seluler Gratis",
-        href: "https://www.spotify.com/download/",
-      },
-      {
-        label: "Populer berdasarkan Negara",
-        href: "https://www.spotify.com/charts/",
-      },
-      { label: "Impor musikmu", href: "https://www.spotify.com/import/" },
+      { label: "Dukungan" },
+      { label: "Aplikasi Seluler Gratis" },
+      { label: "Populer berdasarkan Negara" },
+      { label: "Impor musikmu" },
     ],
   },
   {
     title: "Paket Spotify",
     links: [
-      { label: "Premium Lite", href: "https://www.spotify.com/premium/" },
-      { label: "Premium Standard", href: "https://www.spotify.com/premium/" },
-      { label: "Premium Platinum", href: "https://www.spotify.com/premium/" },
-      { label: "Premium Student", href: "https://www.spotify.com/student/" },
-      { label: "Spotify Free", href: "https://www.spotify.com/free/" },
+      { label: "Premium Lite" },
+      { label: "Premium Standard" },
+      { label: "Premium Platinum" },
+      { label: "Premium Student" },
+      { label: "Spotify Free" },
     ],
   },
 ];
@@ -108,12 +101,9 @@ const SpotifyFooter: React.FC = () => {
                 <ul className="space-y-3">
                   {col.links.map((link) => (
                     <li key={link.label}>
-                      <a
-                        href={link.href}
-                        className="text-sm text-[#a7a7a7] hover:text-white transition-colors duration-150"
-                      >
+                      <span className="text-sm text-[#a7a7a7] hover:text-white hover:underline cursor-pointer transition-colors duration-150">
                         {link.label}
-                      </a>
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -121,36 +111,33 @@ const SpotifyFooter: React.FC = () => {
             ))}
           </div>
 
-          {/* Social Icons — top right, horizontal row */}
-          <div className="flex flex-row lg:flex-row items-start gap-3 shrink-0">
-            <a
-              href="https://www.instagram.com/spotify/"
+          {/* Social Icons */}
+          <div className="flex flex-row items-start gap-3 shrink-0">
+            <span
               aria-label="Instagram"
-              className="w-10 h-10 rounded-full bg-[#282828] hover:bg-[#3e3e3e] flex items-center justify-center transition-colors duration-150"
+              className="w-10 h-10 rounded-full bg-[#282828] hover:bg-[#3e3e3e] flex items-center justify-center cursor-pointer transition-colors duration-150"
             >
               <InstagramIcon />
-            </a>
-            <a
-              href="https://twitter.com/spotify"
+            </span>
+            <span
               aria-label="Twitter"
-              className="w-10 h-10 rounded-full bg-[#282828] hover:bg-[#3e3e3e] flex items-center justify-center transition-colors duration-150"
+              className="w-10 h-10 rounded-full bg-[#282828] hover:bg-[#3e3e3e] flex items-center justify-center cursor-pointer transition-colors duration-150"
             >
               <TwitterIcon />
-            </a>
-            <a
-              href="https://www.facebook.com/spotify"
+            </span>
+            <span
               aria-label="Facebook"
-              className="w-10 h-10 rounded-full bg-[#282828] hover:bg-[#3e3e3e] flex items-center justify-center transition-colors duration-150"
+              className="w-10 h-10 rounded-full bg-[#282828] hover:bg-[#3e3e3e] flex items-center justify-center cursor-pointer transition-colors duration-150"
             >
               <FacebookIcon />
-            </a>
+            </span>
           </div>
         </div>
 
         {/* Divider */}
         <hr className="border-[#282828] my-8" />
 
-        {/* Bottom: Copyright only */}
+        {/* Copyright */}
         <p className="text-sm text-[#a7a7a7]">
           © {new Date().getFullYear()} Spotify AB
         </p>
