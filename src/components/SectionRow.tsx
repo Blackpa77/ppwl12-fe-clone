@@ -1,42 +1,118 @@
+import { useRef, useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import MusicCard from "./MusicCard";
+import type { MusicItem } from "../lib/spotify-data";
 
 interface SectionRowProps {
   title: string;
-  items: Array<{
-    id: string;
-    title?: string;
-    name?: string;
-    artist?: string;
-    description?: string;
-    cover?: string;
-    image?: string;
-    type?: string;
-    explicit?: boolean;
-  }>;
+  items: MusicItem[];
   isArtist?: boolean;
+  isRadio?: boolean;
+  isChart?: boolean;
 }
 
-export default function SectionRow({ title, items, isArtist = false }: SectionRowProps) {
+export default function SectionRow({
+  title,
+  items,
+  isArtist = false,
+  isRadio = false,
+  isChart = false,
+}: SectionRowProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 0);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    checkScroll();
+    el.addEventListener("scroll", checkScroll);
+    window.addEventListener("resize", checkScroll);
+    return () => {
+      el.removeEventListener("scroll", checkScroll);
+      window.removeEventListener("resize", checkScroll);
+    };
+  }, []);
+
+  const scroll = (dir: "left" | "right") => {
+    scrollRef.current?.scrollBy({
+      left: dir === "right" ? 360 : -360,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <section className="mb-8">
+    <section className="mb-10">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-2xl font-bold text-white hover:underline cursor-pointer">{title}</h2>
-        <button className="text-sm font-bold text-[#a7a7a7] hover:underline">Show all</button>
+        <h2 className="text-xl font-bold text-white hover:underline cursor-pointer">
+          {title}
+        </h2>
+        <button className="text-xs font-bold text-[#a7a7a7] hover:text-white transition-colors">
+          Show all
+        </button>
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
-        {items.slice(0, 6).map((item) => (
-          <MusicCard
-            key={item.id}
-            title={item.title || item.name || ""}
-            subtitle={isArtist ? (item.type || "Artist") : (item.artist || item.description || "")}
-            image={item.cover || item.image || ""}
-            isRound={isArtist}
-            explicit={item.explicit}
-          />
-        ))}
+      {/* Carousel wrapper */}
+      <div className="relative">
+        {/* Left button — selalu tampil jika bisa scroll */}
+        <button
+          onClick={() => scroll("left")}
+          disabled={!canScrollLeft}
+          className={`absolute left-0 top-[45%] -translate-y-1/2 -translate-x-4 z-10 w-8 h-8 bg-[#2a2a2a] hover:bg-[#3e3e3e] rounded-full flex items-center justify-center shadow-lg transition-all duration-200 ${
+            canScrollLeft ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+        >
+          <ChevronLeft className="w-5 h-5 text-white" />
+        </button>
+
+        {/* Scrollable row */}
+        <div
+          ref={scrollRef}
+          className="flex gap-4 overflow-x-auto scrollbar-hide"
+          style={{ scrollSnapType: "x mandatory" }}
+        >
+          {items.map((item) => (
+            <div key={item.id} style={{ scrollSnapAlign: "start" }} className="flex-shrink-0">
+              <MusicCard
+                title={item.title || item.name || ""}
+                subtitle={
+                  isArtist
+                    ? item.type || "Artist"
+                    : isRadio
+                    ? item.description || ""
+                    : isChart
+                    ? item.description || ""
+                    : item.artist || item.description || ""
+                }
+                image={item.cover || item.image || ""}
+                isRound={isArtist}
+                explicit={item.explicit}
+                gradient={item.gradient}
+                label={item.label}
+                isChart={isChart}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Right button — selalu tampil jika bisa scroll */}
+        <button
+          onClick={() => scroll("right")}
+          disabled={!canScrollRight}
+          className={`absolute right-0 top-[45%] -translate-y-1/2 translate-x-4 z-10 w-8 h-8 bg-[#2a2a2a] hover:bg-[#3e3e3e] rounded-full flex items-center justify-center shadow-lg transition-all duration-200 ${
+            canScrollRight ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+        >
+          <ChevronRight className="w-5 h-5 text-white" />
+        </button>
       </div>
     </section>
   );
