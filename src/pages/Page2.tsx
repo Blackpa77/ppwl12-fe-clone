@@ -1,9 +1,15 @@
 import { useState } from "react";
 
-// Gambar yang diupload
-import coverMain from "../assets/youll-be-in-my-heart.png";
+import coverMain from "../assets/youll-be-in-my-heart.jpg";
 import coverWannaTake from "../assets/niki-wanna-take.jpg";
 import coverLowkey from "../assets/niki-lowkey.jpg";
+import coverBuzz from "../assets/niki-buzz.jpg";
+import coverAccoustic from "../assets/niki-accoustic.jpg";
+import coverEverySummertime from "../assets/niki-everysummertime.jpg";
+import coverILikeU from "../assets/niki-ilikeu.jpg";
+import coverNicole from "../assets/niki-nicole.jpg";
+import coverMoonchild from "../assets/niki-moonchild.jpg";
+import coverZephyr from "../assets/niki-zephyr.jpg";
 
 const albumTracks = [
   { id: 1, title: "Before – Acoustic Version", artist: "NIKI", duration: "4:38" },
