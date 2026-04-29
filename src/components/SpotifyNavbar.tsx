@@ -22,7 +22,7 @@ const SpotifyNavbar = () => {
           </svg>
           <input
             type="text"
-            placeholder="What do you want to play?"
+            placeholder="Ngapain dengar lagu disini, make spotify asli woi"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="bg-transparent text-white text-sm outline-none w-full placeholder-gray-400"
