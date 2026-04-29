@@ -1,28 +1,34 @@
 import { useState } from "react";
 import SpotifyFooter from "../components/SpotifyFooter";
 
-// Gambar yang diupload
-import coverMain from "../assets/youll-be-in-my-heart.png";
+import coverMain from "../assets/youll-be-in-my-heart.jpg";
 import coverWannaTake from "../assets/niki-wanna-take.jpg";
 import coverLowkey from "../assets/niki-lowkey.jpg";
+import coverBuzz from "../assets/niki-buzz.jpg";
+import coverAccoustic from "../assets/niki-accoustic.jpg";
+import coverEverySummertime from "../assets/niki-everysummertime.jpg";
+import coverILikeU from "../assets/niki-ilikeu.jpg";
+import coverNicole from "../assets/niki-nicole.jpg";
+import coverMoonchild from "../assets/niki-moonchild.jpg";
+import coverZephyr from "../assets/niki-zephyr.jpg";
 
 const albumTracks = [
   { id: 1, title: "Before – Acoustic Version", artist: "NIKI", duration: "4:38" },
   { id: 2, title: "You'll Be in My Heart", artist: "NIKI", duration: "4:03" },
 ];
 
-// More by NIKI — pakai gambar yang ada, sisanya placeholder berwarna
 const moreByNiki = [
-  { id: 1, title: "Nicole",                              year: "2022", img: null,            color: "bg-zinc-700" },
-  { id: 2, title: "lowkey",                              year: "2019", img: coverLowkey,      color: "bg-slate-600" },
-  { id: 3, title: "Buzz",                                year: "2024", img: null,            color: "bg-stone-700" },
-  { id: 4, title: "NIKI Acoustic Sessions: Head In Th...",year: "2018", img: null,            color: "bg-neutral-600" },
-  { id: 5, title: "Every Summertime",                    year: "2021", img: null,            color: "bg-amber-900" },
-  { id: 6, title: "wanna take this downtown?",           year: "2019", img: coverWannaTake,  color: "bg-red-900" },
-  { id: 7, title: "I Like U",                            year: "2017", img: null,            color: "bg-zinc-800" },
-  { id: 8, title: "MOONCHILD",                           year: "2020", img: null,            color: "bg-slate-800" },
-  { id: 9, title: "Zephyr",                              year: "2018", img: null,            color: "bg-gray-700" },
+  { id: 1, title: "Nicole", year: "2022", img: coverNicole, color: "bg-zinc-700" }, 
+  { id: 2, title: "lowkey", year: "2019", img: coverLowkey, color: "bg-slate-600" },
+  { id: 3, title: "Buzz", year: "2024", img: coverBuzz, color: "bg-stone-700" },
+  { id: 4, title: "NIKI Acoustic Sessions", year: "2018", img: coverAccoustic, color: "bg-neutral-600" },
+  { id: 5, title: "Every Summertime", year: "2021", img: coverEverySummertime, color: "bg-amber-900" },
+  { id: 6, title: "wanna take this downtown?", year: "2019", img: coverWannaTake, color: "bg-red-900" },
+  { id: 7, title: "I Like U", year: "2017", img: coverILikeU, color: "bg-zinc-800" },
+  { id: 8, title: "MOONCHILD", year: "2020", img: coverMoonchild, color: "bg-slate-800" },
+  { id: 9, title: "Zephyr", year: "2018", img: coverZephyr, color: "bg-gray-700" },
 ];
+
 
 function PlayIcon({ size = 20, className = "" }: { size?: number; className?: string }) {
   return (
@@ -171,8 +177,12 @@ export default function Page2() {
                 <div key={item.id} className="group cursor-pointer min-w-[150px] w-[150px] flex-shrink-0 bg-[#181818] hover:bg-[#282828] rounded-lg p-3 transition-all duration-200">
                   <div className="relative mb-3">
                     <div className={`w-full aspect-square rounded overflow-hidden ${!item.img ? item.color : ""}`}>
-                      {item.img && (
+                      {item.img ? (
                         <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-white/20 text-xs text-center p-2">
+                          No Cover
+                        </div>
                       )}
                     </div>
                     <button className="absolute bottom-2 right-2 w-10 h-10 bg-[#1DB954] rounded-full flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 shadow-lg hover:bg-[#1ed760]">
