@@ -33,13 +33,13 @@ export default function SectionRow({
     const el = scrollRef.current;
     if (!el) return;
     checkScroll();
-    el.addEventListener("scroll", checkScroll);
+    el.addEventListener("scroll", checkScroll, { passive: true });
     window.addEventListener("resize", checkScroll);
     return () => {
       el.removeEventListener("scroll", checkScroll);
       window.removeEventListener("resize", checkScroll);
     };
-  }, []);
+  }, [items]); // Update jika items berubah
 
   const scroll = (dir: "left" | "right") => {
     scrollRef.current?.scrollBy({
@@ -52,21 +52,21 @@ export default function SectionRow({
     <section className="mb-10">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-bold text-white hover:underline cursor-pointer">
+        <h2 className="text-2xl font-bold text-white hover:underline cursor-pointer tracking-tighter">
           {title}
         </h2>
-        <button className="text-xs font-bold text-[#a7a7a7] hover:text-white transition-colors">
+        <button className="text-xs font-bold text-[#a7a7a7] hover:text-white transition-colors uppercase tracking-widest">
           Show all
         </button>
       </div>
 
       {/* Carousel wrapper */}
-      <div className="relative">
-        {/* Left button — selalu tampil jika bisa scroll */}
+      <div className="relative group">
+        {/* Left button */}
         <button
           onClick={() => scroll("left")}
           disabled={!canScrollLeft}
-          className={`absolute left-0 top-[45%] -translate-y-1/2 -translate-x-4 z-10 w-8 h-8 bg-[#2a2a2a] hover:bg-[#3e3e3e] rounded-full flex items-center justify-center shadow-lg transition-all duration-200 ${
+          className={`absolute left-0 top-[40%] -translate-y-1/2 -translate-x-4 z-10 w-8 h-8 bg-[#2a2a2a] hover:bg-[#3e3e3e] rounded-full flex items-center justify-center shadow-xl transition-all duration-300 ${
             canScrollLeft ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
@@ -76,7 +76,7 @@ export default function SectionRow({
         {/* Scrollable row */}
         <div
           ref={scrollRef}
-          className="flex gap-2 overflow-x-auto scrollbar-hide"
+          className="flex gap-4 overflow-x-auto scrollbar-hide pb-4"
           style={{ scrollSnapType: "x mandatory" }}
         >
           {items.map((item) => (
@@ -86,13 +86,12 @@ export default function SectionRow({
                 subtitle={
                   isArtist
                     ? item.type || "Artist"
-                    : isRadio
-                    ? item.description || ""
-                    : isChart
+                    : isRadio || isChart
                     ? item.description || ""
                     : item.artist || item.description || ""
                 }
-                image={item.cover || item.image || ""}
+                // PERBAIKAN DI SINI: Memastikan 'cover' atau 'image' diambil
+                image={item.cover || item.image || ""} 
                 isRound={isArtist}
                 gradient={item.gradient}
                 label={item.label}
@@ -102,11 +101,11 @@ export default function SectionRow({
           ))}
         </div>
 
-        {/* Right button — selalu tampil jika bisa scroll */}
+        {/* Right button */}
         <button
           onClick={() => scroll("right")}
           disabled={!canScrollRight}
-          className={`absolute right-0 top-[45%] -translate-y-1/2 translate-x-4 z-10 w-8 h-8 bg-[#2a2a2a] hover:bg-[#3e3e3e] rounded-full flex items-center justify-center shadow-lg transition-all duration-200 ${
+          className={`absolute right-0 top-[40%] -translate-y-1/2 translate-x-4 z-10 w-8 h-8 bg-[#2a2a2a] hover:bg-[#3e3e3e] rounded-full flex items-center justify-center shadow-xl transition-all duration-300 ${
             canScrollRight ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >

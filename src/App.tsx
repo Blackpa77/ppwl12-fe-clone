@@ -8,7 +8,6 @@ function App() {
     <Router>
       <Routes>
         <Route element={<MainLayout />}>
-          {/* Semua page di dalam sini akan otomatis punya Sidebar & Navbar */}
           <Route path="/" element={<Page1 />} />
           <Route path="/album" element={<Page2 />} />
         </Route>
