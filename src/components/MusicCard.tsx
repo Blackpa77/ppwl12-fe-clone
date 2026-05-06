@@ -4,7 +4,7 @@ import { Play } from "lucide-react";
 interface MusicCardProps {
   title: string;
   subtitle: string;
-  image: string; // Ini akan menerima item.cover atau item.image
+  image: string;
   isRound?: boolean;
   label?: string;
   isChart?: boolean;
@@ -19,7 +19,6 @@ export default function MusicCard({
   isChart = false,
 }: MusicCardProps) {
 
-  // Gunakan div pembungkus yang sama untuk semua tipe agar layout konsisten
   const renderImage = () => (
     <div className="relative mb-4">
       <img
@@ -38,7 +37,7 @@ export default function MusicCard({
   );
 
   return (
-    <div className="group relative bg-[#121212] hover:bg-[#282828] rounded-md p-4 transition-all duration-300 cursor-pointer min-w-[160px] w-[160px] flex-shrink-0">
+    <div className="group relative bg-[#121212] hover:bg-[#282828] rounded-md p-1 transition-all duration-300 cursor-pointer min-w-[180px] w-[180px] flex-shrink-0">
       {renderImage()}
       <h3 className="font-bold text-white text-sm truncate mb-1">{title}</h3>
       <p className="text-[#a7a7a7] text-xs line-clamp-2 leading-snug">

@@ -39,7 +39,7 @@ export default function SectionRow({
       el.removeEventListener("scroll", checkScroll);
       window.removeEventListener("resize", checkScroll);
     };
-  }, [items]); // Update jika items berubah
+  }, [items]);
 
   const scroll = (dir: "left" | "right") => {
     scrollRef.current?.scrollBy({
@@ -73,7 +73,6 @@ export default function SectionRow({
           <ChevronLeft className="w-5 h-5 text-white" />
         </button>
 
-        {/* Scrollable row */}
         <div
           ref={scrollRef}
           className="flex gap-4 overflow-x-auto scrollbar-hide pb-4"
@@ -90,7 +89,7 @@ export default function SectionRow({
                     ? item.description || ""
                     : item.artist || item.description || ""
                 }
-                // PERBAIKAN DI SINI: Memastikan 'cover' atau 'image' diambil
+                // PERBAIKAN
                 image={item.cover || item.image || ""} 
                 isRound={isArtist}
                 gradient={item.gradient}

@@ -12,12 +12,10 @@ export default function MainLayout() {
       <Navbar />
       
       <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar Statis (Selalu Ada) */}
         <Sidebar
           onCreatePlaylist={() => console.log("Create playlist")}
         />
 
-        {/* Konten Dinamis (Berubah antara Page 1 atau Page 2) */}
         <main className="flex-1 overflow-y-auto bg-[#121212] rounded-lg m-2 ml-0 scroll-smooth flex flex-col">
           <div className="flex-1 px-6 py-4">
             <Outlet /> {/* Di sinilah Page1 atau Page2 akan muncul */}
