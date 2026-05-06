@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { moreByNikiData } from "../lib/spotify-data"; // Import data lengkapnya
 
-// Import cover untuk header (tetap dipertahankan)
+
 import coverMain from "../assets/youll-be-in-my-heart.jpg";
 import coverLowkey from "../assets/niki-lowkey.jpg";
 
@@ -106,7 +106,7 @@ export default function Page2() {
           <h2 className="text-2xl font-bold text-white hover:underline cursor-pointer">More by NIKI</h2>
           <span className="text-xs font-bold text-[#a7a7a7] hover:text-white cursor-pointer uppercase tracking-tighter">See discography</span>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {moreByNikiData.map((item) => (
             <div key={item.id} className="group bg-[#181818] hover:bg-[#282828] p-4 rounded-lg transition-all duration-300 cursor-pointer">
               <div className="relative mb-4 shadow-lg">

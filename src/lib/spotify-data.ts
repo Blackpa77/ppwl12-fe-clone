@@ -23,7 +23,6 @@ import nikiBuzz from "../assets/niki-buzz.jpg";
 import nikiEverySummertime from "../assets/niki-everysummertime.jpg";
 import nikiLowkey from "../assets/niki-lowkey.jpg";
 import nikiAcoustic from "../assets/niki-accoustic.jpg";
-import nikiWannaTake from "../assets/niki-wanna-take.jpg";
 import nikiNicole from "../assets/niki-nicole.jpg";
 
 export const featuredCharts: MusicItem[] = [
@@ -126,6 +125,5 @@ export const moreByNikiData = [
   { id: 2, title: "lowkey", year: "2019", img: nikiLowkey },
   { id: 3, title: "Buzz", year: "2024", img: nikiBuzz },
   { id: 4, title: "NIKI Acoustic Sessions", year: "2018", img: nikiAcoustic },
-  { id: 5, title: "Every Summertime", year: "2021", img: nikiEverySummertime },
-  { id: 6, title: "wanna take this downtown?", year: "2019", img: nikiWannaTake }
+  { id: 5, title: "Every Summertime", year: "2021", img: nikiEverySummertime }
 ];
