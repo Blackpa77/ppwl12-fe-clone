@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className="h-16 bg-black flex items-center justify-between px-4 z-50">
-      {/* KIRI: Logo & Navigasi Halaman */}
+      {/* Logo & Navigasi Halaman */}
       <div className="flex items-center gap-4">
         <Link to="/" className="text-white p-2 hover:scale-105 transition">
           <svg viewBox="0 0 167.5 167.5" className="w-8 h-8 fill-current">
@@ -25,13 +25,13 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* TENGAH: Search Bar */}
+      {/*Search Bar */}
       <div className="flex-1 max-w-[400px] mx-4 relative group">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#b3b3b3] group-focus-within:text-white" size={20} />
         <input type="text" placeholder="What do you want to play?" className="bg-[#242424] hover:bg-[#2a2a2a] border-none text-white text-sm rounded-full py-3 px-10 w-full focus:ring-2 ring-white outline-none transition-all" />
       </div>
 
-      {/* KANAN: Teks Navigasi Asli Spotify */}
+      {/* Teks Navigasi Asli Spotify */}
       <div className="flex items-center gap-6">
         <div className="hidden lg:flex items-center gap-5 text-sm font-bold text-[#b3b3b3]">
           <span className="hover:text-white cursor-pointer hover:scale-105 transition">Premium</span>

@@ -1,3 +1,4 @@
+// lib/spotify-data.ts
 export interface MusicItem {
   id: string;
   title?: string;
@@ -10,6 +11,65 @@ export interface MusicItem {
   gradient?: string;
   label?: string;
 }
+
+import chartGlobal1 from "../assets/region_global_default.webp";
+import chartGlobal2 from "../assets/region_global_default2.webp";
+import chartGlobal3 from "../assets/region_global_default3.webp";
+import chartIndo1 from "../assets/region_id_default.webp";
+import chartIndo2 from "../assets/region_id_default2.webp";
+import chartIndo3 from "../assets/region_id_default3.webp";
+
+import nikiBuzz from "../assets/niki-buzz.jpg";
+import nikiEverySummertime from "../assets/niki-everysummertime.jpg";
+import nikiLowkey from "../assets/niki-lowkey.jpg";
+import nikiAcoustic from "../assets/niki-accoustic.jpg";
+import nikiWannaTake from "../assets/niki-wanna-take.jpg";
+import nikiNicole from "../assets/niki-nicole.jpg";
+
+export const featuredCharts: MusicItem[] = [
+  { 
+    id: "1", 
+    title: "Top Songs Global", 
+    description: "Your weekly update of the most played tracks right now", 
+    cover: chartGlobal1,
+    gradient: "from-blue-800 to-blue-950" 
+  },
+  { 
+    id: "2", 
+    title: "Top Songs Indonesia", 
+    description: "Your weekly update of the most played tracks right now", 
+    cover: chartIndo1,
+    gradient: "from-green-800 to-green-950"
+  },
+  { 
+    id: "3", 
+    title: "Top 50 Global", 
+    description: "Your daily update of the most played tracks right now", 
+    cover: chartGlobal2, 
+    gradient: "from-sky-700 to-sky-950"
+  },
+  { 
+    id: "4", 
+    title: "Top 50 Indonesia", 
+    description: "Your daily update of the most played tracks right now", 
+    cover: chartIndo2, 
+    gradient: "from-red-800 to-red-950"
+  },
+  { 
+    id: "5", 
+    title: "Viral 50 Global", 
+    description: "Your daily update of the most played tracks right now", 
+    cover: chartGlobal3, 
+    gradient: "from-emerald-700 to-emerald-950"
+  },
+  { 
+    id: "6", 
+    title: "Viral 50 Indonesia", 
+    description: "Your daily update of the most played tracks right now", 
+    cover: chartIndo3, 
+    gradient: "from-red-700 to-red-950"
+  },
+];
 
 export const trendingSongs: MusicItem[] = [
   { id: "1", title: "Kicau Mania", artist: "Bangsay", cover: "https://picsum.photos/seed/km1/300/300" },
@@ -61,11 +121,11 @@ export const popularRadio: MusicItem[] = [
   { id: "8", name: "NDX A.K.A.", description: "With Guyon Waton, Aftershine, Larone and more", image: "https://picsum.photos/seed/r8/300/300", gradient: "from-yellow-700 to-yellow-900", label: "RADIO" },
 ];
 
-export const featuredCharts: MusicItem[] = [
-  { id: "1", title: "Top Songs Global", description: "Your weekly update of the most played tracks right now", cover: "/src/assets/region_global_default.webp", gradient: "from-blue-800 to-blue-950" },
-  { id: "2", title: "Top Songs Indonesia", description: "Your weekly update of the most played tracks right now", cover: "/src/assets/region_id_default.webp", gradient: "from-green-800 to-green-950" },
-  { id: "3", title: "Top 50 Global", description: "Your daily update of the most played tracks right now", cover: "/src/assets/region_global_default2.webp", gradient: "from-sky-700 to-sky-950" },
-  { id: "4", title: "Top 50 Indonesia", description: "Your daily update of the most played tracks right now", cover: "/src/assets/region_id_default2.webp", gradient: "from-red-800 to-red-950" },
-  { id: "5", title: "Viral 50 Global", description: "Your daily update of the most played tracks right now", cover: "/src/assets/region_global_default3.webp", gradient: "from-emerald-700 to-emerald-950" },
-  { id: "6", title: "Viral 50 Indonesia", description: "Your daily update of the most played tracks right now", cover: "/src/assets/region_id_default3.webp", gradient: "from-red-700 to-red-950" },
+export const moreByNikiData = [
+  { id: 1, title: "Nicole", year: "2022", img: nikiNicole },
+  { id: 2, title: "lowkey", year: "2019", img: nikiLowkey },
+  { id: 3, title: "Buzz", year: "2024", img: nikiBuzz },
+  { id: 4, title: "NIKI Acoustic Sessions", year: "2018", img: nikiAcoustic },
+  { id: 5, title: "Every Summertime", year: "2021", img: nikiEverySummertime },
+  { id: 6, title: "wanna take this downtown?", year: "2019", img: nikiWannaTake }
 ];

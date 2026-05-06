@@ -58,7 +58,7 @@ main::-webkit-scrollbar-thumb {
   }
 }
 
-/* 5. Spotify Card Animation */
+/* 5. Spotify */
 .music-card-hover {
   transition: background-color 0.3s ease;
 }

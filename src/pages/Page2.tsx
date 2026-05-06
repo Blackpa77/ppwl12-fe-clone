@@ -1,31 +1,15 @@
 import { useState } from "react";
+import { moreByNikiData } from "../lib/spotify-data"; // Import data lengkapnya
 
+// Import cover untuk header (tetap dipertahankan)
 import coverMain from "../assets/youll-be-in-my-heart.jpg";
-import coverWannaTake from "../assets/niki-wanna-take.jpg";
 import coverLowkey from "../assets/niki-lowkey.jpg";
-import coverBuzz from "../assets/niki-buzz.jpg";
-import coverAccoustic from "../assets/niki-accoustic.jpg";
-import coverEverySummertime from "../assets/niki-everysummertime.jpg";
-import coverILikeU from "../assets/niki-ilikeu.jpg";
-import coverNicole from "../assets/niki-nicole.jpg";
-import coverMoonchild from "../assets/niki-moonchild.jpg";
-import coverZephyr from "../assets/niki-zephyr.jpg";
 
 const albumTracks = [
   { id: 1, title: "Before – Acoustic Version", artist: "NIKI", duration: "4:38" },
   { id: 2, title: "You'll Be in My Heart", artist: "NIKI", duration: "4:03" },
 ];
 
-const moreByNiki = [
-  { id: 1, title: "Nicole", year: "2022", img: null, color: "bg-zinc-700" },
-  { id: 2, title: "lowkey", year: "2019", img: coverLowkey, color: "bg-slate-600" },
-  { id: 3, title: "Buzz", year: "2024", img: null, color: "bg-stone-700" },
-  { id: 4, title: "NIKI Acoustic Sessions: Head In Th...", year: "2018", img: null, color: "bg-neutral-600" },
-  { id: 5, title: "Every Summertime", year: "2021", img: null, color: "bg-amber-900" },
-  { id: 6, title: "wanna take this downtown?", year: "2019", img: coverWannaTake, color: "bg-red-900" },
-];
-
-// Icons
 function PlayIcon({ size = 20, className = "" }: { size?: number; className?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -40,7 +24,7 @@ export default function Page2() {
 
   return (
     <div className="flex flex-col">
-      {/* 1. Header Album - Gradient Background */}
+      {/* 1. Header Album */}
       <div className="flex flex-col sm:flex-row items-end gap-6 pb-8 -mx-6 -mt-4 p-6 bg-gradient-to-b from-[#2a2a3a] to-[#121212]">
         <div className="w-[190px] h-[190px] min-w-[190px] shadow-[0_8px_40px_rgba(0,0,0,0.5)] rounded overflow-hidden">
           <img src={coverMain} alt="Cover" className="w-full h-full object-cover" />
@@ -50,7 +34,6 @@ export default function Page2() {
           <h1 className="text-5xl lg:text-7xl font-black leading-tight tracking-tight">You'll Be In My Heart</h1>
           <div className="flex items-center gap-2 mt-4 text-sm font-bold">
             <div className="w-6 h-6 rounded-full bg-zinc-600 overflow-hidden">
-                {/* Artist Small Avatar */}
                 <img src={coverLowkey} className="w-full h-full object-cover" alt="NIKI" />
             </div>
             <span className="hover:underline cursor-pointer">NIKI</span>
@@ -73,30 +56,22 @@ export default function Page2() {
             <PlayIcon size={22} className="text-black ml-0.5" />
           )}
         </button>
-        
         <button className="text-[#a7a7a7] hover:text-white transition">
            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
              <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="16" y2="12" />
            </svg>
         </button>
-
-        <button className="text-[#a7a7a7] hover:text-white">
-           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-             <circle cx="5" cy="12" r="1.5" /><circle cx="12" cy="12" r="1.5" /><circle cx="19" cy="12" r="1.5" />
-           </svg>
-        </button>
       </div>
 
-      {/* 3. Tracklist Table Style */}
+      {/* 3. Tracklist Section */}
       <div className="mb-8">
         <div className="grid grid-cols-[16px_1fr_40px] gap-4 px-4 pb-2 border-b border-white/10 text-[#a7a7a7] text-sm font-medium uppercase tracking-widest">
           <span>#</span>
           <span>Title</span>
-          <div className="flex justify-end">
+          <div className="flex justify-end pr-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
           </div>
         </div>
-
         <div className="mt-4">
           {albumTracks.map((track, index) => (
             <div
@@ -112,31 +87,31 @@ export default function Page2() {
                 <span className="text-white text-base font-medium truncate">{track.title}</span>
                 <span className="text-[#a7a7a7] text-sm hover:underline cursor-pointer w-fit">{track.artist}</span>
               </div>
-              <span className="text-[#a7a7a7] text-sm text-right">{track.duration}</span>
+              <span className="text-[#a7a7a7] text-sm text-right pr-2">{track.duration}</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* 4. Copyright Info */}
+      {/* 4. Copyright */}
       <div className="text-[#a7a7a7] text-[10px] space-y-1 mb-12">
         <p>September 14, 2022</p>
         <p>© 2022 88rising Records LLC</p>
         <p>℗ 2022 88rising Records LLC</p>
       </div>
 
-      {/* 5. More by Artist Section */}
+      {/* 5. More by NIKI Section (MENGGUNAKAN DATA LIB) */}
       <div className="mb-12">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-2xl font-bold text-white hover:underline cursor-pointer">More by NIKI</h2>
           <span className="text-xs font-bold text-[#a7a7a7] hover:text-white cursor-pointer uppercase tracking-tighter">See discography</span>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {moreByNiki.map((item) => (
+          {moreByNikiData.map((item) => (
             <div key={item.id} className="group bg-[#181818] hover:bg-[#282828] p-4 rounded-lg transition-all duration-300 cursor-pointer">
               <div className="relative mb-4 shadow-lg">
-                <div className={`aspect-square rounded-md overflow-hidden ${!item.img ? item.color : ""}`}>
-                  {item.img && <img src={item.img} alt={item.title} className="w-full h-full object-cover" />}
+                <div className="aspect-square rounded-md overflow-hidden">
+                  <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
                 </div>
                 <button className="absolute bottom-2 right-2 w-10 h-10 bg-[#1DB954] rounded-full flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl">
                    <PlayIcon size={16} className="text-black ml-0.5" />

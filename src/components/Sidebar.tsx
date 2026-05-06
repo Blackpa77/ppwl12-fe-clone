@@ -114,7 +114,7 @@ export function Sidebar({ onCreatePlaylist }: SidebarProps) {
                 </div>
               </div>
 
-              {/* Tombol English */}
+              {/* English */}
               <button className="mt-2 mx-2 flex items-center gap-2 border border-[#7c7c7c] rounded-[18px] px-4 py-2 text-sm text-white font-bold hover:scale-105 transition-transform hover:border-white">
                 <GlobeIcon />
                 English
